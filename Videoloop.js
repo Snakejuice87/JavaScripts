@@ -4,6 +4,8 @@
 // @description	  My javascript injection
 // @author        Snakejuice
 // @include       *.*
+// @exclude      *images.google.com/*
+// @exclude      images.google.com
 // @run-at      document-start
 // @version       1.0
 // ==/UserScript==
