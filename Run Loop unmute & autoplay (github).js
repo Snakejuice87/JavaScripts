@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          Run Loop unmute & autoplay
+// @name          Run Loop unmute & autoplay (github).js
 // @namespace     http://userstyles.org
 // @description	  My javascript injection
 // @author        Snakejuice
