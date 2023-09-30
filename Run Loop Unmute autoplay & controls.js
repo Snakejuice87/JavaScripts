@@ -12,7 +12,6 @@
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 // @run-at     document-start
 // @version       1.0
-
 // ==/UserScript==
 
 (function() {
@@ -23,10 +22,10 @@
 		video.setAttribute("loop", true);
 		video.setAttribute("muted", false);
 		video.setAttribute("autoplay", true);
-		//video.loop = true;
-		//video.muted = false;
-		//video.autoplay = true;
-		//video.controls = true;
+		video.loop = true;
+		video.muted = false;
+		video.autoplay = true;
+		video.controls = true;
 	}
 	if (typeof video.loop == 'boolean') { // loop supported
 		video.loop = true;
