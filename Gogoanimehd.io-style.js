@@ -1,8 +1,11 @@
 // ==UserScript==
-// @name           Gogoanime style
+// @name           Gogoanimehd.io-style.js
 // @description    custom css style for Gogoannime
-// @include        *gogoanime.*/*
-// @include        *gogoanime.*
+// @include        *gogoanime(hd)?.io/*/*
+// @include        *gogoanimehd.io/*
+// @include        .*gogoanime(hd)?.io/.*/.*
+// @include        .*gogoanimehd.io/.*
+// @match          gogoanimehd.io
 // @run-at         document-start
 
 // ==/UserScript==
