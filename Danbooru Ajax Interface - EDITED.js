@@ -16,6 +16,8 @@
 // @match          *://rule34.xxx/#*
 // @match          *://beta.sankakucomplex.com/
 // @match          *://beta.sankakucomplex.com/#*
+// @match          *://chan.sankakucomplex.com/
+// @match          *://chan.sankakucomplex.com/#*
 // @match          *://rule34.paheal.net/
 // @match          *://rule34.paheal.net/#*
 // @version        4.6692016
@@ -80,8 +82,19 @@ var sites = [
                 }
     },
         {
-        name    :   "sankakucomplex.com",
+        name    :   "beta.sankakucomplex.com",
         site    :   "beta\.sankakucomplex\.com",
+        post    :   "/index.php?page=dapi&s=post&q=index",
+        note    :   "/index.php?page=dapi&s=note&q=index&post_id=",
+        list    :   "/index.php?page=post&s=list",
+        page    :   "/index.php?page=post&s=view&id=",
+        query   :   function(tags, images, page, postid) {
+                        return (postid ? postid : "&tags=" + tags + "&limit=" + images + "&pid=" + (page - 1));
+                }
+    },
+        {
+        name    :   "chan.sankakucomplex.com",
+        site    :   "chan\.sankakucomplex\.com",
         post    :   "/index.php?page=dapi&s=post&q=index",
         note    :   "/index.php?page=dapi&s=note&q=index&post_id=",
         list    :   "/index.php?page=post&s=list",
