@@ -15,7 +15,9 @@
 
     // Select all video elements on the page
     const videos = document.querySelectorAll('video');
-        
+	const currentRate = video.playbackRate;
+    let savedrate = video.playbackRate;
+    
     videos.forEach(video => {
         
         let originalRate = video.playbackRate;
@@ -34,12 +36,14 @@
         });
 
         const toggleButton = document.createElement('button');
-        // const toggleRateButton = createButton('Toggle Rate', () => {
-        const currentRate = video.playbackRate;
         toggleButton.textContent = 'toggle';
         toggleButton.addEventListener('click', () => {
-            video.playbackRate = currentRate === 1 ? originalRate : 1;
-            originalRate = currentRate;
+            if (video.playbackRate === 1) {
+                    video.playbackRate = savedrate;
+                } else {
+                    savedrate = video.playbackRate;
+                    video.playbackRate = 1;
+            }
         });
         
         const resetButton = document.createElement('button');
@@ -53,8 +57,12 @@
         urlButton.textContent = 'Video Src';
         urlButton.addEventListener('click', () => {
             const videoSrc = video.src;
-            alert(videoSrc);
+        if (videoSrc == null) {
+           // alert(videoSrc);
+             alert('video src is NULL');
+          } else {
             window.open(videoSrc, '_blank'); // Open the video source URL in a new tab
+          }
         });
 
         // Append buttons to a container div
