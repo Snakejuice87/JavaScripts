@@ -6,7 +6,6 @@
 // @author       Your Name
 // @match        *://*/*
 // @match        *
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 // @grant        none
 // ==/UserScript==
 
@@ -46,11 +45,13 @@
             }
         });
         
-        const resetButton = document.createElement('button');
+       /* 
+       const resetButton = document.createElement('button');
         resetButton.textContent = '1x';
         resetButton.addEventListener('click', () => {
             video.playbackRate = 1;
         });
+	*/
 
         // Create a button to get the video source URL
         const urlButton = document.createElement('button');
@@ -70,7 +71,7 @@
         controlsDiv.appendChild(slowerButton);
         controlsDiv.appendChild(fasterButton);
         controlsDiv.appendChild(toggleButton);
-        controlsDiv.appendChild(resetButton);
+        // controlsDiv.appendChild(resetButton);
         controlsDiv.appendChild(urlButton);
 
         // Add styles to the container div
