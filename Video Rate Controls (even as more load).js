@@ -48,7 +48,7 @@
             decreaseBtn.textContent = '-';
             decreaseBtn.classList.add('speed-control');
             decreaseBtn.addEventListener('click', () => {
-                video.playbackRate -= 0.1;
+                video.playbackRate -= 0.05;
                 updateSpeedDisplay();
             });
 
@@ -64,7 +64,7 @@
             increaseBtn.textContent = '+';
             increaseBtn.classList.add('speed-control');
             increaseBtn.addEventListener('click', () => {
-                video.playbackRate += 0.1;
+                video.playbackRate += 0.05;
                 updateSpeedDisplay();
             });
 
