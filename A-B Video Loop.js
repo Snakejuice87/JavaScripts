@@ -3,8 +3,24 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Adds looping controls to video elements
-// @author       Your Name
+// @author       SnakeJuice
 // @match        *://*/*
+// @include        *://*bd36019.com/*
+// @include      *://.*(mp4|mov|avi|mp3|ogg|wav).*
+// @match      *://*(mp4|mov|avi|mp3|ogg|wav)*
+// @include      https?:\/\/.*\.(?:mp4|mov|avi|mp3|ogg|wav)($|.*)
+// @exclude https://snakejuice87.github.io/_posts/Gemma%20pornhub%20gif%20videos.html
+// @exclude    anitaku.*
+// @exclude    *://anitaku.*/*
+// @exclude    *://anitaku.*/*/*
+// @exclude    *://anitaku.*
+// @exclude    anitaku.*
+// @exclude    anitaku.**
+// @exclude    anitaku.*/*
+// @exclude    anitaku.*/*/*
+// @exclude     *://*.google.com
+// @exclude     *://*.google.com/*
+// @run-at     document-start
 // @grant        none
 // ==/UserScript==
 
@@ -17,14 +33,16 @@
         const controlContainer = document.createElement('div');
         controlContainer.style.display = 'flex';
         controlContainer.style.marginBottom = '10px';
+		controlContainer.style.marginTop = '10px';
+		controlContainer.style.zIndex = '999999';
 
-        // Create buttons
-        const buttonA = document.createElement('button');
-        buttonA.innerText = 'Set A';
-        const buttonB = document.createElement('button');
-        buttonB.innerText = 'Set B';
-        const buttonClear = document.createElement('button');
-        buttonClear.innerText = 'Clear A & B';
+		// Create buttons
+		const buttonA = document.createElement("button");
+		buttonA.innerText = "Set A";
+		const buttonB = document.createElement("button");
+		buttonB.innerText = "Set B";
+		const buttonClear = document.createElement("button");
+		buttonClear.innerText = "Clear A+B";
 
         // Append buttons to the control container
         controlContainer.appendChild(buttonA);

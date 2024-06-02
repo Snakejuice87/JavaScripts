@@ -3,9 +3,23 @@
 // @namespace    http://your.website.com
 // @version      1.0
 // @description  Adds playback rate control buttons and a button to get the video source URL.
-// @author       Your Name
+// @author       SnakeJuice
 // @match        *://*/*
-// @match        *
+// @include        *://*bd36019.com/*
+// @include      *://.*(mp4|mov|avi|mp3|ogg|wav).*
+// @match      *://*(mp4|mov|avi|mp3|ogg|wav)*
+// @include      https?:\/\/.*\.(?:mp4|mov|avi|mp3|ogg|wav)($|.*)
+// @exclude    anitaku.*
+// @exclude    *://anitaku.*/*
+// @exclude    *://anitaku.*/*/*
+// @exclude    *://anitaku.*
+// @exclude    https://anitaku.*
+// @exclude    https://anitaku.**
+// @exclude    https://anitaku.*/*
+// @exclude    https://anitaku.*/*/*
+// @exclude     *://*.google.com
+// @exclude     *://*.google.com/*
+// @run-at     document-start
 // @grant        none
 // ==/UserScript==
 
@@ -45,13 +59,11 @@
             }
         });
         
-       /* 
-       const resetButton = document.createElement('button');
+        const resetButton = document.createElement('button');
         resetButton.textContent = '1x';
         resetButton.addEventListener('click', () => {
             video.playbackRate = 1;
         });
-	*/
 
         // Create a button to get the video source URL
         const urlButton = document.createElement('button');
@@ -71,7 +83,7 @@
         controlsDiv.appendChild(slowerButton);
         controlsDiv.appendChild(fasterButton);
         controlsDiv.appendChild(toggleButton);
-        // controlsDiv.appendChild(resetButton);
+        controlsDiv.appendChild(resetButton);
         controlsDiv.appendChild(urlButton);
 
         // Add styles to the container div

@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         (broken) Video Playback Control v.2
+// @name        Video rate buttons
 // @namespace    http://your.website.com
 // @description  Adds playback rate control buttons and a button to get the video source URL.
 // @author       SnakeJuice
@@ -9,6 +9,9 @@
 // @match      *://*(mp4|mov|avi|mp3|ogg|wav)*
 // @include      https?:\/\/.*\.(?:mp4|mov|avi|mp3|ogg|wav)($|.*)
 // @exclude    anitaku.*
+// @exclude https://snakejuice87.github.io/_posts/Gemma%20pornhub%20gif%20videos.html
+// @exclude-match    anitaku.*
+// @exclude-match    anitaku.so
 // @exclude    *://anitaku.*/*
 // @exclude    *://anitaku.*/*/*
 // @exclude    *://anitaku.*
@@ -18,7 +21,6 @@
 // @exclude    anitaku.*/*/*
 // @exclude     *://*.google.com
 // @exclude     *://*.google.com/*
-// @run-at     document-start
 // @grant        none
 // ==/UserScript==
 
@@ -45,8 +47,8 @@
 
         let originalRate = video.playbackRate;
 
-        const slowDownButton = createButton('-', () => {
-            video.playbackRate = Math.max(0.05, video.playbackRate - 0.05);
+        const slowDownButton = createButton('-0.05', () => {
+            video.playbackRate = Math.max(-1.0, video.playbackRate - 0.05);
         });
 
         const toggleRateButton = createButton('Toggle', () => {
@@ -55,11 +57,11 @@
             originalRate = currentRate;
         });
 
-        const speedUpButton = createButton('+', () => {
+        const speedUpButton = createButton('+0.05', () => {
             video.playbackRate += 0.05;
         });
 
-        const getSrcButton = createButton('-Src', () => {
+        const getSrcButton = createButton('Video src', () => {
             const src = video.currentSrc || video.src;
             window.open(src, '_blank');
             // alert(`${src}`);

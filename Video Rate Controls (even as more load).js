@@ -3,14 +3,23 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Adds buttons to control video playback rate
-// @author       You
+// @author       SnakeJuice
 // @match        *://*/*
 // @include        *://*bd36019.com/*
-// @exclude     *://*anitaku.*/*
-// @exclude     *://*anitaku.*
+// @include      *://.*(mp4|mov|avi|mp3|ogg|wav).*
+// @match      *://*(mp4|mov|avi|mp3|ogg|wav)*
+// @include      https?:\/\/.*\.(?:mp4|mov|avi|mp3|ogg|wav)($|.*)
+// @exclude    anitaku.*
+// @exclude    *://anitaku.*/*
+// @exclude    *://anitaku.*/*/*
+// @exclude    *://anitaku.*
+// @exclude    anitaku.*
+// @exclude    anitaku.**
+// @exclude    anitaku.*/*
+// @exclude    anitaku.*/*/*
 // @exclude     *://*.google.com
 // @exclude     *://*.google.com/*
-// @require             https://code.jquery.com/jquery-3.6.0.min.js
+// @run-at     document-start
 // @grant        none
 // ==/UserScript==
 
@@ -48,7 +57,7 @@
             decreaseBtn.textContent = '-';
             decreaseBtn.classList.add('speed-control');
             decreaseBtn.addEventListener('click', () => {
-                video.playbackRate -= 0.05;
+                video.playbackRate -= 0.1;
                 updateSpeedDisplay();
             });
 
@@ -64,7 +73,7 @@
             increaseBtn.textContent = '+';
             increaseBtn.classList.add('speed-control');
             increaseBtn.addEventListener('click', () => {
-                video.playbackRate += 0.05;
+                video.playbackRate += 0.1;
                 updateSpeedDisplay();
             });
 
