@@ -77,6 +77,17 @@
                 updateSpeedDisplay();
             });
 
+         const toggleButton = document.createElement('button');
+        toggleButton.textContent = 'toggle';
+        toggleButton.addEventListener('click', () => {
+            if (video.playbackRate === 1) {
+                    video.playbackRate = savedrate;
+                } else {
+                    savedrate = video.playbackRate;
+                    video.playbackRate = 1;
+            }
+        });
+
             const speedDisplay = document.createElement('span');
             speedDisplay.classList.add('speed-display');
             updateSpeedDisplay();
@@ -88,6 +99,7 @@
             controlsContainer.appendChild(decreaseBtn);
             controlsContainer.appendChild(resetBtn);
             controlsContainer.appendChild(increaseBtn);
+            controlsContainer.appendChild(toggleButton
             controlsContainer.appendChild(speedDisplay);
 
             video.parentNode.insertBefore(controlsContainer, video.nextSibling);
