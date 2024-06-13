@@ -16,16 +16,16 @@
     function createRateControls(video) {
         const container = document.createElement('div');
         container.style.position = 'absolute';
-        container.style.top = '100px';
-        container.style.left = '100px';
+        container.style.top = '10px';
+        container.style.left = '50px';
         container.style.zIndex = '9999';
         container.style.background = 'rgba(0, 0, 0, 0.5)';
         container.style.borderRadius = '5px';
         container.style.padding = '5px';
         container.style.color = 'white';
-        container.style.fontSize = '14px';
+        container.style.fontSize = '12px';
 
-        const rates = [0.5, 1, 1.5, 2];
+        const rates = [0.65, 0.75, 0.85, 1];
 
         rates.forEach(rate => {
             const button = document.createElement('button');
