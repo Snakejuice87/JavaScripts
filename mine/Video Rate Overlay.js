@@ -16,8 +16,8 @@
     function createRateControls(video) {
         const container = document.createElement('div');
         container.style.position = 'absolute';
-        container.style.top = '10px';
-        container.style.left = '10px';
+        container.style.top = '100px';
+        container.style.left = '100px';
         container.style.zIndex = '9999';
         container.style.background = 'rgba(0, 0, 0, 0.5)';
         container.style.borderRadius = '5px';
