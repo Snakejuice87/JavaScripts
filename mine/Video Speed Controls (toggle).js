@@ -9,17 +9,8 @@
 // @include      *://.*(mp4|mov|avi|mp3|ogg|wav).*
 // @match      *://*(mp4|mov|avi|mp3|ogg|wav)*
 // @include      https?:\/\/.*\.(?:mp4|mov|avi|mp3|ogg|wav)($|.*)
-// @exclude    anitaku.*
-// @exclude    *://anitaku.*/*
-// @exclude    *://anitaku.*/*/*
-// @exclude    *://anitaku.*
-// @exclude    https://anitaku.*
-// @exclude    https://anitaku.**
-// @exclude    https://anitaku.*/*
-// @exclude    https://anitaku.*/*/*
 // @exclude     *://*.google.com
 // @exclude     *://*.google.com/*
-// @run-at     document-start
 // @grant        none
 // ==/UserScript==
 
@@ -91,8 +82,20 @@
         controlsDiv.style.top = '10px';
         controlsDiv.style.left = '10px';
         controlsDiv.style.zIndex = '9999';
+        
+        
+        video.parentElement.style.position = 'relative';
+        video.parentElement.appendChild(controlsDiv);
 
+        // Adjust position when in fullscreen
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                controlsDiv.style.position = 'fixed';
+            } else {
+                controlsDiv.style.position = 'absolute';
+            }
+        });
         // Append the controls to the document body
-        document.body.appendChild(controlsDiv);
+        // document.body.appendChild(controlsDiv);
     });
 })();
