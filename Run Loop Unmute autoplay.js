@@ -19,8 +19,7 @@
 		video.muted = false;
 		video.autoplay = true;
 	}
-	completion(videos.length);
-})();
+
 
 if (typeof video.loop == 'boolean') { // loop supported
 		video.loop = true;
@@ -32,3 +31,5 @@ if (typeof video.loop == 'boolean') { // loop supported
 	}
 	//...
 	video.play();
+		completion(videos.length);
+})();
