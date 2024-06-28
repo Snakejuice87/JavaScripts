@@ -96,6 +96,6 @@
             }
         });
         // Append the controls to the document body
-        // document.body.appendChild(controlsDiv);
+         document.body.appendChild(controlsDiv);
     });
 })();
