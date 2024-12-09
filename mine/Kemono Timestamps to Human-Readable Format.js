@@ -1,4 +1,27 @@
-  (function() {
+// ==UserScript==
+// @name         Kemono Timestamps to Human-Readable Format
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Convert timestamps to human-readable format like "yesterday" or "an hour ago"
+// @author       ChatGPT
+// @match        https://kemono.su/favorites
+// @match        *://kemono.su/*
+// @include        *://kemono.su/*
+// @match        kemono.su
+// @match        https://kemono.*/*
+// @match        https://kemono.*/*/*
+// @include        https://kemono.*/*
+// @include        https://kemono.*/*/*
+// @match        https://kemono.su/*
+// @match        https://kemono.su/*
+// @include        https://kemono.su/*/*
+// @include        https://kemono.su/*/*/*
+// @include        *://kemono.su/*
+// @include        /^https?:\/\/(www\.)?kemono\.*(\/.*)\/(.*\/)?(\/.*)?/
+// @include        /^https?:\/\/(w{3}\.)?kemono\.(su|\w{2,3})\/(.*\/)?(.*\/)?(\/.*)?/
+// ==/UserScript==
+
+(function() {
     'use strict';
 
         const tmes = document.querySelectorAll('.timestamp');
