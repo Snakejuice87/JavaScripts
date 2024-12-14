@@ -11,7 +11,7 @@
 (function() {
     'use strict';
 
-    var navbar = document.querySelectorAll('.sticky-top > .nav-bar');
+    var navbar = document.querySelectorAll('nav.navbar, .sticky-top > .navbar, .navbar.navbar-expand-md.navbar-dark bg-dark');
         navbar.forEach(navbar => {
             navbar.style.display = 'none';
             navbar.style.height = '0px';
@@ -53,7 +53,7 @@
 
             // Step 5: Create a button element
             const downloadButton = document.createElement('button');
-            downloadButton.context = 'Download';
+            downloadButton.innerText = 'Download';
             downloadButton.style.cssText = 'z-index: 99999; margin-right: 10px; padding: 4.4px 12px; background-color: rgb(74, 74, 74); color: rgb(255, 255, 255); border: none; cursor: pointer;';
 
             // Step 6: Set the button to open the new URL in a new tab when clicked
@@ -65,7 +65,7 @@
             const videoShareElement = document.getElementById('video_share');
             if (videoShareElement) {
                 videoShareElement.parentNode.insertBefore(downloadButton, videoShareElement);
-                videoShareElement.parentNode.removeChild(videoShareElement);
+               // videoShareElement.parentNode.removeChild(videoShareElement);
             }
         }
     }
