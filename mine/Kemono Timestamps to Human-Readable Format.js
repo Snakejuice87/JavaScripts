@@ -5,20 +5,18 @@
 // @description  Convert timestamps to human-readable format like "yesterday" or "an hour ago"
 // @author       ChatGPT
 // @match        https://kemono.su/favorites
-// @match        *://kemono.su/*
-// @include        *://kemono.su/*
+// @match        https://kemono.su/*
+// @match        https://kemono.su/*/*
+// @match        https://kemono.su/*/*/*
 // @match        kemono.su
-// @match        https://kemono.*/*
-// @match        https://kemono.*/*/*
-// @include        https://kemono.*/*
-// @include        https://kemono.*/*/*
-// @match        https://kemono.su/*
-// @match        https://kemono.su/*
+// @match        kemono.su/*
+// @match        kemono.su/*/*
+// @match        kemono.su/*/*/*
+// @include        kemono.su
+// @include        https://kemono.su/*
 // @include        https://kemono.su/*/*
 // @include        https://kemono.su/*/*/*
-// @include        *://kemono.su/*
-// @include        /^https?:\/\/(www\.)?kemono\.*(\/.*)\/(.*\/)?(\/.*)?/
-// @include        /^https?:\/\/(w{3}\.)?kemono\.(su|\w{2,3})\/(.*\/)?(.*\/)?(\/.*)?/
+// @include        https://kemono.su/account/favorites/artists
 // ==/UserScript==
 
 (function() {
@@ -66,6 +64,6 @@
     // Run the function initially
     updateTimestamps();
     // Run the function again when the DOM changes (for dynamically loaded content)
-    /* const observer = new MutationObserver(updateTimestamps);
-    observer.observe(document.body, { childList: true, subtree: true });   */
+    const observer = new MutationObserver(updateTimestamps);
+    observer.observe(document.body, { childList: true, subtree: true });
 })();
