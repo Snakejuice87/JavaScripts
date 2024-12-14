@@ -23,10 +23,10 @@
     'use strict';
 
         const tmes = document.querySelectorAll('.timestamp');
-		          tmes.forEach(tme => {
-					tme.style.color = '#76E658' // '#3781D6';
-					tme.style.fontWeight = '600';
-		        });
+		tmes.forEach(tme => {
+			tme.style.color = '#76E658' // '#3781D6';
+			tme.style.fontWeight = '600';
+		  });
 		
     // Function to calculate time difference and convert to human-readable format
     function timeAgo(datetime) {
@@ -64,6 +64,6 @@
     // Run the function initially
     updateTimestamps();
     // Run the function again when the DOM changes (for dynamically loaded content)
-    const observer = new MutationObserver(updateTimestamps);
-    observer.observe(document.body, { childList: true, subtree: true });
+   /* const observer = new MutationObserver(updateTimestamps);
+    observer.observe(document.body, { childList: true, subtree: true }); */
 })();
