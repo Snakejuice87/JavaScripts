@@ -1,24 +1,33 @@
 
 // ==UserScript==
-// @name           Rule34video-Fixed_rightclick_video
+// @name	   Rule34video-Fixed_rightclick_video
 // @namespace      http://tampermonkey.net/
-// @version        0.2
+// @version	0.2
 // @description    Modify URLs to append tag_ids and sort_by query parameters
-// @include        https://rule34video.com/*
-// @include        https://rule34video.com/*/*/*
-// @include        https://rule34video.com/*/*/*/*
-// @include        https://rule34video.com/*/*/*
-// @include        https://rule34video.com/*/*
-// @include       https://rule34video.com/*
+// @include	      https://rule34video.com/*
+// @include	      https://rule34video.com/*/*/*
+// @include	      https://rule34video.com/*/*/*/*
+// @include	      https://rule34video.com/*/*/*
+// @include	       https://rule34video.com/*/*
+// @match       https://rule34video.com/*
 // @match      *://rule34video.com/*
-// @include        https://rule34video.com
+// @include	     https://rule34video.com
 // @match     https://rule34video.com
 // @match     https://rule34video.com/*
 // @include     rule34video.com/*
 // @include     rule34video.com/*/*
 // @include     rule34video.com/*/*/*
 // @include     rule34video.com/*/*/*/*
-// @run-at          document-start
+// @match      *://ezgif.com/*
+// @include	     https://ezgif.com
+// @match     https://ezgif.com
+// @match     https://ezgif.com/*
+// @include     ezgif.com/*
+// @include     ezgif.com/*/*
+// @include     ezgif.com/*/*/*
+// @include     ezgif.com/*/*/*/*
+// @include       https://www.lesbian8.com/videos/*
+// @run-at       document-end
 // @grant none
 // ==/UserScript==
 
@@ -40,7 +49,7 @@
 					// Toggle the display property between 'block' and 'none'
 					fpUiElement.style.display = (fpUiElement.style.display === 'none') ? 'block' : 'none';
 					video.controls = true;
-					video.setAttribute('controls', 'true');
+					video.setAttribute('controls', 'true');			
 				});
 		}
 
@@ -50,14 +59,14 @@
 
 		if (video) {
 			video.addEventListener('contextmenu', function() {
-	        event.preventDefault();
+					event.preventDefault();
 											
 					// Toggle the display property between 'block' and 'none'
 					fpUiElement.style.display = (fpUiElement.style.display === 'none') ? 'block' : 'none';
 					video.controls = false;
-					video.removeAttribute('controls');
+					video.removeAttribute('controls');			
 				});
 		}
 	});
-
 })();
+
