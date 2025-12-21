@@ -10,7 +10,11 @@
 
 (function() {
     'use strict';
-
+    
+    var olddl = document.getElementById('video_download');
+            olddl.style.display = 'none';
+            olddl.style.height = '0px';
+    
     var navbar = document.querySelectorAll('nav.navbar, .sticky-top > .navbar, .navbar.navbar-expand-md.navbar-dark bg-dark');
         navbar.forEach(navbar => {
             navbar.style.display = 'none';
