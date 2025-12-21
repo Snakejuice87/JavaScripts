@@ -49,7 +49,7 @@
             const highestQuality = qualityMatch ? qualityMatch[1] : 'default-quality';
 
             // Step 4: Construct the new URL
-            const newUrl = `https://www.naughtymachinima.com/media/videos/h264/${videoId}_${highestQuality}.mp4?filename=/${videoName}`;
+            const newUrl = `https://videos.naughtymachinima.com/media/videos/h264/${videoId}_${highestQuality}.mp4?filename=/${videoName}`;
 
             // Step 5: Create a button element
             const downloadButton = document.createElement('button');
