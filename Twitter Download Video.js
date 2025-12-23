@@ -1,20 +1,12 @@
 // ==UserScript==
 // @name                Twitter Download Video
-// @name:zh-TW          Twitter 下載影片
-// @name:zh-CN          Twitter 下载视频
-// @name:ja             Twitter ビデオをダウンロード
-// @name:ko             Twitter 비디오 다운로드
-// @name:ru             Twitter Скачать видео
 // @version             1.0.7
 // @description         One button click to direct video download web page.
-// @description:zh-TW   即按前往下載影片的網頁。
-// @description:zh-CN   一键导向下载视频的网页。
-// @description:ja      ボタンをクリックして、ビデオのダウンロードWebページに移動します。
-// @description:ko      한 번의 클릭으로 비디오 다운로드 웹 사이트를 탐색하십시오.
-// @description:ru      Нажмите кнопку, чтобы перейти на страницу загрузки видео.
 // @author              Hayao-Gai
 // @namespace           https://github.com/HayaoGai
 // @icon                https://i.imgur.com/M9oO8K9.png
+// @include             https://x.com/*
+// @include             https://mobile.x.com/*
 // @include             https://twitter.com/*
 // @include             https://mobile.twitter.com/*
 // @grant               none
